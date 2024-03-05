@@ -15,26 +15,20 @@ var newValue = ref(props?.numberValue)
 var previousValue:string = props?.numberValue
 
 function onKeyDown() {
-  console.log("onKeyDown")
   previousValue = newValue.value ?? '';
 }
 
 function setCursorPosition(el: any, pos: any) {
-  console.log("setCursorPosition", el, pos)
   el.focus()
   el.setSelectionRange(pos, pos)
 }
 
 function onKeyUp(event: object) {
-  console.log(customInput)
-  console.log(event.keyCode)
-
   // just selected keys
   if(event.keyCode <=48 && (event.keyCode >= 57 && (event.keyCode != 188 || event.keyCode != 190))) {
     newValue.value = previousValue
     return
   }
-
 
   if(event.keyCode == 190 && props.decimal == ',') { // 190 is the keyCode for dot
     const startPos = customInput.value ? customInput.value.selectionStart : null;
@@ -42,7 +36,6 @@ function onKeyUp(event: object) {
   } 
   emit('update:numberValue', newValue)
 }
-//    onkeypress='return event.charCode >= 48 && event.charCode <= 57 || (event.charCode == 46 || event.charCode == 44)'
 
 </script>
 
