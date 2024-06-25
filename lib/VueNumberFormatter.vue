@@ -33,7 +33,7 @@ function onKeyUp(event: object) {
   if(event.keyCode == 190 && props.decimal == ',') { // 190 is the keyCode for dot
     const startPos = customInput.value ? customInput.value.selectionStart : null;
     setCursorPosition(customInput.value, startPos)
-  } 
+  }
   emit('update:numberValue', newValue)
 }
 
