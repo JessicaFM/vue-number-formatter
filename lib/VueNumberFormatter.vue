@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineProps, ref, defineEmits } from 'vue'
+import { defineProps, ref } from 'vue'
 
 const props = defineProps({
       decimal: { type: String, default: '.'},
