@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineProps, ref } from 'vue'
+import { defineProps, ref, defineEmits } from 'vue'
 
 const props = defineProps({
       decimal: { type: String, default: '.'},
@@ -13,6 +13,8 @@ const customInput = ref(null)
 const emit = defineEmits(['update:numberValue'])
 var newValue = ref(props?.numberValue)
 var previousValue:string = props?.numberValue
+
+console.log(previousValue)
 
 function onKeyDown() {
   previousValue = newValue.value ?? '';
